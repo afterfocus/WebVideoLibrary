@@ -88,7 +88,6 @@ public class EditDiskServlet extends HttpServlet {
             request.setAttribute("errorString", errorString);
             doGet(request, response);
         }
-        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/diskList");
-        dispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/diskList");
     }
 }

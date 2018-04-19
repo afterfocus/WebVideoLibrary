@@ -32,7 +32,7 @@ public class AddDiskServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String errorString = null, url = "/diskList";
+        String errorString = null;
         try {
             String rusTitle = request.getParameter("rusTitle");
             String engTitle = request.getParameter("engTitle");
@@ -50,7 +50,6 @@ public class AddDiskServlet extends HttpServlet {
             request.setAttribute("errorString", errorString);
             doGet(request, response);
         }
-        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/diskList");
     }
 }

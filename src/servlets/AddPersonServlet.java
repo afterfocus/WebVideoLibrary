@@ -32,7 +32,7 @@ public class AddPersonServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String errorString = null, url = "/personList";
+        String errorString = null;
         try {
             String surname = request.getParameter("surname");
             String name = request.getParameter("name");
@@ -47,7 +47,6 @@ public class AddPersonServlet extends HttpServlet {
             request.setAttribute("errorString", errorString);
             doGet(request, response);
         }
-        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/personList");
     }
 }
