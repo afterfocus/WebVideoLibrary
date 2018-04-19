@@ -47,6 +47,6 @@ public class AddPersonServlet extends HttpServlet {
             request.setAttribute("errorString", errorString);
             doGet(request, response);
         }
-        response.sendRedirect(request.getContextPath() + "/personList");
+        else response.sendRedirect(request.getContextPath() + "/personList");
     }
 }
