@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Context>
+
+    <Resource name="jdbc/WebVideoLibrary"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"
+              username="MyUser"
+              password="124578"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@localhost:1521:XE"/>
+
+</Context>

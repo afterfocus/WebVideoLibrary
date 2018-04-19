@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Oracle - @localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="MYUSER">
+      <ObjectId>49</ObjectId>
+      <IntrospectionTimestamp>2018-04-03.02:40:35</IntrospectionTimestamp>
+      <CreatedTimestamp>2018-04-03.02:01:00</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:01</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>29</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="APPQOSSYS">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="CTXSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="XDB">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="ANONYMOUS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="MDSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="HR">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="FLOWS_FILES">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="APEX_040000">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="USERNAME">
+      <ObjectId>48</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="ME">
+      <ObjectId>50</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="AFTERFOCUS">
+      <ObjectId>51</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <sequence id="23" parent="2" name="DISK_ID_SEQUENCE">
+      <ObjectId>20069</ObjectId>
+      <CreatedTimestamp>2018-04-03.02:01:01</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:01</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="24" parent="2" name="PERSON_ID_SEQUENCE">
+      <ObjectId>20068</ObjectId>
+      <CreatedTimestamp>2018-04-03.02:01:01</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:01</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <table id="25" parent="2" name="DISK">
+      <ObjectId>20066</ObjectId>
+      <CreatedTimestamp>2018-04-03.02:01:00</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:01</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="26" parent="2" name="PERSON">
+      <ObjectId>20064</ObjectId>
+      <CreatedTimestamp>2018-04-03.02:01:00</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:00</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <routine id="27" parent="2" name="ADD_NEW_DISK">
+      <ObjectId>20071</ObjectId>
+      <RoutineKind>function</RoutineKind>
+      <DependsOnIds>4852,20069,20066</DependsOnIds>
+      <CreatedTimestamp>2018-04-03.02:01:01</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:01</ModifiedTimestamp>
+    </routine>
+    <routine id="28" parent="2" name="ADD_NEW_PERSON">
+      <ObjectId>20070</ObjectId>
+      <RoutineKind>function</RoutineKind>
+      <DependsOnIds>4852,20068,20064</DependsOnIds>
+      <CreatedTimestamp>2018-04-03.02:01:01</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:01</ModifiedTimestamp>
+    </routine>
+    <column id="29" parent="25" name="DISK_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="25" name="RUS_TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(80)|0</DataType>
+    </column>
+    <column id="31" parent="25" name="ENG_TITLE">
+      <Position>3</Position>
+      <DataType>VARCHAR2(80)|0</DataType>
+    </column>
+    <column id="32" parent="25" name="RELEASE_YEAR">
+      <Position>4</Position>
+      <DataType>NUMBER(*)|0</DataType>
+    </column>
+    <column id="33" parent="25" name="PERSON_ID">
+      <Position>5</Position>
+      <DataType>NUMBER(*)|0</DataType>
+    </column>
+    <index id="34" parent="25" name="DISK_PK">
+      <ObjectId>20067</ObjectId>
+      <CreatedTimestamp>2018-04-03.02:01:00</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:00</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>DISK_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="25" name="DISK_PK">
+      <ModifiedTimestamp>2018-04-03.02:01:00</ModifiedTimestamp>
+      <ColNames>DISK_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>DISK_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="36" parent="25" name="PERSON">
+      <ModifiedTimestamp>2018-04-03.02:01:01</ModifiedTimestamp>
+      <ColNames>PERSON_ID</ColNames>
+      <RefSchemaName>MYUSER</RefSchemaName>
+      <RefTableName>PERSON</RefTableName>
+      <RefKeyName>PERSON_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="37" parent="26" name="PERSON_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="26" name="SURNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="26" name="NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="26" name="PHONENUMBER">
+      <Position>4</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+    </column>
+    <index id="41" parent="26" name="PERSON_PK">
+      <ObjectId>20065</ObjectId>
+      <CreatedTimestamp>2018-04-03.02:01:00</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-03.02:01:00</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>PERSON_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="26" name="PERSON_PK">
+      <ModifiedTimestamp>2018-04-03.02:01:00</ModifiedTimestamp>
+      <ColNames>PERSON_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PERSON_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <argument id="43" parent="27">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>NUMBER|0</DataType>
+    </argument>
+    <argument id="44" parent="27" name="RUS_TITLE">
+      <Position>1</Position>
+      <DataType>VARCHAR2|0</DataType>
+    </argument>
+    <argument id="45" parent="27" name="ENG_TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2|0</DataType>
+    </argument>
+    <argument id="46" parent="27" name="RELEASE_YEAR">
+      <Position>3</Position>
+      <DataType>NUMBER|0</DataType>
+    </argument>
+    <argument id="47" parent="27" name="PERSON_ID">
+      <Position>4</Position>
+      <DataType>NUMBER|0</DataType>
+    </argument>
+    <argument id="48" parent="28">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>NUMBER|0</DataType>
+    </argument>
+    <argument id="49" parent="28" name="SURNAME">
+      <Position>1</Position>
+      <DataType>VARCHAR2|0</DataType>
+    </argument>
+    <argument id="50" parent="28" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2|0</DataType>
+    </argument>
+    <argument id="51" parent="28" name="PHONENUMBER">
+      <Position>3</Position>
+      <DataType>VARCHAR2|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>
