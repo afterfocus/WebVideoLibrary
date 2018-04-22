@@ -1,10 +1,10 @@
 package servlets;
 
+import beans.Person;
 import utils.VideoLibrary;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.Year;
 
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
@@ -38,7 +38,7 @@ public class AddPersonServlet extends HttpServlet {
             String name = request.getParameter("name");
             String phonenumber = request.getParameter("phonenumber");
             if(surname.equals("") || name.equals("")) throw new NullPointerException("Поля 'Фамилия' и 'Имя' должны быть заполнены.");
-            VideoLibrary.addPerson(surname, name, phonenumber);
+            VideoLibrary.addPerson(new Person(-1, surname, name, phonenumber, -1));
 
         } catch (SQLException | NamingException | NullPointerException e) {
             errorString = e.getMessage();

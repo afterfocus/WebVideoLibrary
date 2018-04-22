@@ -3,8 +3,6 @@ package servlets;
 import utils.VideoLibrary;
 
 import javax.naming.NamingException;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

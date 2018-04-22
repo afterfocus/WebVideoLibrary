@@ -1,6 +1,7 @@
 package servlets;
 
 import beans.Disk;
+import beans.Person;
 import utils.VideoLibrary;
 
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class EditDiskServlet extends HttpServlet {
         } else {
             url = "/WEB-INF/views/editDiskView.jsp";
             request.setAttribute("disk", disk);
-            if (disk.getPerson() != null) request.setAttribute("person", disk.getPerson());
+            if (disk != null && disk.getPerson() != null) request.setAttribute("person", disk.getPerson());
         }
         RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
@@ -68,7 +69,7 @@ public class EditDiskServlet extends HttpServlet {
             int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
             if (rusTitle.equals("") && engTitle.equals("")) throw new NullPointerException("Название фильма должно быть заполнено хотя-бы на одном языке.");
             if (releaseYear < 1900 || releaseYear > Year.now().getValue() + 2) throw new NullPointerException("Введено некорректное значение года выпуска фильма.");
-            VideoLibrary.editDisk(diskID, rusTitle, engTitle, releaseYear);
+            VideoLibrary.updateDisk(new Disk(diskID, rusTitle, engTitle, releaseYear, null));
 
             if (isIssued) {
                 int personID = Integer.parseInt(request.getParameter("pcode"));
@@ -76,7 +77,7 @@ public class EditDiskServlet extends HttpServlet {
                 String name = request.getParameter("name");
                 String phonenumber = request.getParameter("phonenumber");
                 if (surname.equals("") || name.equals("")) throw new NullPointerException("Поля 'Фамилия' и 'Имя' должны быть заполнены.");
-                VideoLibrary.editPerson(personID, surname, name, phonenumber);
+                VideoLibrary.updatePerson(new Person(personID, surname, name, phonenumber, -1));
             }
         } catch (SQLException | NamingException | NullPointerException e) {
             errorString = e.getMessage();

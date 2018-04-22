@@ -62,17 +62,16 @@ public class DiskListServlet extends HttpServlet {
 
             String searchString = request.getParameter("search").toLowerCase();
 
-            List<Disk> disks = null;
+            List<Disk> disks;
             List<Disk> searchResult = new ArrayList<>();
             try {
                 disks = VideoLibrary.getDiskList();
+                for (Disk d : disks) {
+                    if (d.getRusTitle().toLowerCase().contains(searchString) || d.getEngTitle().toLowerCase().contains(searchString) || Integer.toString(d.getReleaseYear()).contains(searchString))
+                        searchResult.add(d);
+                }
             } catch (SQLException | NamingException e) {
                 errorString = e.toString();
-            }
-
-            for (Disk d : disks) {
-                if (d.getRusTitle().toLowerCase().contains(searchString) || d.getEngTitle().toLowerCase().contains(searchString) || Integer.toString(d.getReleaseYear()).contains(searchString))
-                    searchResult.add(d);
             }
 
             if (errorString != null) {

@@ -1,6 +1,5 @@
 package servlets;
 
-import beans.Disk;
 import beans.Person;
 import utils.VideoLibrary;
 
@@ -51,17 +50,17 @@ public class PersonListServlet extends HttpServlet {
         String errorString = null;
         String searchString = request.getParameter("search").toLowerCase();
 
-        List<Person> personList = null;
+        List<Person> personList;
         List<Person> searchResult = new ArrayList<>();
         try {
             personList = VideoLibrary.getPersonList();
+            for (Person p : personList) {
+                if (p.getSurname().toLowerCase().contains(searchString) || p.getName().toLowerCase().contains(searchString) || p.getPhonenumber().contains(searchString))
+                    searchResult.add(p);
+            }
+
         } catch (SQLException | NamingException e) {
             errorString = e.toString();
-        }
-
-        for (Person p : personList) {
-            if (p.getSurname().toLowerCase().contains(searchString) || p.getName().toLowerCase().contains(searchString) || p.getPhonenumber().contains(searchString))
-                searchResult.add(p);
         }
 
         if (errorString != null) {

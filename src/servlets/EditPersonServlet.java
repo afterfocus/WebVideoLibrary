@@ -5,7 +5,6 @@ import utils.VideoLibrary;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.Year;
 
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
@@ -17,8 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = {"/editPerson"})
 public class EditPersonServlet extends HttpServlet {
-
-    private boolean isIssued;
 
     public EditPersonServlet() {
         super();
@@ -64,7 +61,7 @@ public class EditPersonServlet extends HttpServlet {
             String name = request.getParameter("name");
             String phonenumber = request.getParameter("phonenumber");
             if (surname.equals("") || name.equals("")) throw new NullPointerException("Поля 'Фамилия' и 'Имя' должны быть заполнены.");
-            VideoLibrary.editPerson(personID, surname, name, phonenumber);
+            VideoLibrary.updatePerson(new Person(personID, surname, name, phonenumber,-1));
 
         } catch (SQLException | NamingException | NullPointerException e) {
             errorString = e.getMessage();

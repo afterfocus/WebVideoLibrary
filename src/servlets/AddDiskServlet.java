@@ -1,5 +1,6 @@
 package servlets;
 
+import beans.Disk;
 import utils.VideoLibrary;
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class AddDiskServlet extends HttpServlet {
             int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
             if (rusTitle.equals("") && engTitle.equals("")) throw new NullPointerException("Название фильма должно быть заполнено хотя-бы на одном языке.");
             if (releaseYear < 1900 || releaseYear > Year.now().getValue() + 2) throw new NumberFormatException("Введено некорректное значение года выпуска фильма.");
-            VideoLibrary.addDisk(rusTitle, engTitle, releaseYear);
+            VideoLibrary.addDisk(new Disk(-1, rusTitle, engTitle, releaseYear, null));
 
         } catch (SQLException | NamingException | NullPointerException e) {
             errorString = e.getMessage();

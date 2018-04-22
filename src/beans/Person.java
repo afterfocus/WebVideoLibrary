@@ -50,8 +50,4 @@ public class Person {
     public int getIssuedDisks() {
         return issuedDisks;
     }
-
-    public void setIssuedDisks(int issuedDisks) {
-        this.issuedDisks = issuedDisks;
-    }
 }
